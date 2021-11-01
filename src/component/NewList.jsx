@@ -13,7 +13,7 @@ export default function NewList(props) {
                         borderBottom:'grey 1px dashed',
                         borderTopLeftRadius:'10px',
                         borderTopRightRadius:'10px'}}
-            title={<Tooltip trigger='focus' placement="right" title="Appuyez sur entrer"><input 
+            title={<Tooltip trigger='focus' placement="bottomLeft" title="Appuyez sur entrer"><input 
                     autoFocus={true}
                     id="inputNewName"
                     className="inputNewName" 
@@ -28,7 +28,7 @@ export default function NewList(props) {
                   } 
             extra={<div><ColorPanel color="#B11119"disabled="false" handleChangeColor={props.handleChangeColor}></ColorPanel><div className=" d-flex flex-column" style={{position:'absolute',top:'2px',right:'2px'}}>
                  <AddButton 
-                  placement="right"
+                  placementTool="bottom"
                   tooltip="Annuler" 
                   type="text"
                   size="small" 
