@@ -10,7 +10,7 @@ function taskUpdater(oldTasks,newTask){
 export default function AddTask(props   ) {
     return (
         <div >
-            <Tooltip trigger='focus' placement="right" title="Entrer pour ajouter">
+            <Tooltip trigger='focus' placement="bottom" title="Entrer pour ajouter" color="#751905">
                 <input autoFocus className="addTask" placeholder="+   ajouter une tâche"
                         maxLength="20" 
                         onKeyPress={

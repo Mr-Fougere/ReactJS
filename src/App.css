@@ -8,12 +8,14 @@
 
 .App-header {
   background-color:whitesmoke;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: calc(10px + 2vmin);
-  color:white;
+  margin-bottom: 100px;
+  border-bottom: 2px #751905 solid;
+  margin-right: 25px;
+  margin-left: 25px;
 }
 .App-link {
   color: #c1301093;
@@ -54,10 +56,6 @@
 .invisible{
   resize: none;
 }
-.plusDashed{
-  border: dashed 2px Black;
-  box-shadow: -4px 4px 4px 0px rgba(44, 42, 41, 0.19);
-}
 
 .ghostList{
   display: flex;
@@ -68,6 +66,7 @@
   border: dashed 1px grey;
   border-top-left-radius:10px;
   border-top-right-radius:10px;
+  margin-bottom: 25px;
 }
 .bg-grey{
   background-color: whitesmoke; 
@@ -184,6 +183,10 @@ p{
   text-decoration: line-through;
   font-size: 10px;
 }
+
+.welcome{
+  color:#751905;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -203,7 +206,7 @@ p{
  }
 @keyframes dash {
   to{
-    transform: translateX(-2000px);
+    transform: translateX(-1000%);
   }
 }
 

@@ -152,17 +152,17 @@ function App() {
     
   }, [error])  
   return (
-    
     <div className="App">
       {e2Pak==="chevalier"&&(<img  className="knight"src={knightGif} alt="knight" ></img>)}
       {e2Pak==="halloween"&& <Spoopy/>}
-        <header className = "App-header">
+        <header className = "App-header ">
         <img src={logo}  className = "App-logo" alt = "logo" />
-        <p className="mt-100">
-          Bienvenue sur mon application de gestion de listes
-        </p>        
-        <div className="d-flex align-items-center flex-wrap justify-content-center">
-        {loading===true&&<div className="ghostList"><Spin></Spin> </div>}
+        <p className="welcome" >
+          Bienvenue sur GerefouY
+        </p>  
+        </header>      
+        <div className="d-flex align-items-center flex-wrap justify-content-center ">
+       
         {lists.map(list=>(
           <Card 
             className="cardList"
@@ -174,7 +174,7 @@ function App() {
                           borderTopRightRadius:'10px'
                         }} 
             title = {(<div>
-                        <Tooltip title="Modifier le nom de la liste">
+                        <Tooltip title="Modifier le nom de la liste" placement="bottomLeft" color="#751905">
                           <input 
                             className ="listName"
                             value={tempModify===list.name?null:list.name}   
@@ -192,20 +192,19 @@ function App() {
                       </div>)}  
             extra={
               <div>
-                <Popconfirm >
                  <AddButton 
                   style={{position:'absolute',top:'5px',right:'5px'}}
-                  placementTool="top"
+                  placementTool="topLeft"
                   tooltip="Suprimer la liste" 
                   type="text"
                   size="small" 
                   icon={<CloseOutlined style={{color:'white'}}/>}
                   placementPop={"top"}
+                  colorTool="#751905"
                   textPop={`Confirmer la suppression de ${list.name}`}
                   handlePop={()=>(handleDelete(list),notifManager(false,list.name,null,true))}
                   >
                   </AddButton>  
-                </Popconfirm>
                 {selectedList === list && (
                   <ColorPanel style={{position:'absolute',bottom:'1px'}}
                     color={list.color}
@@ -260,10 +259,11 @@ function App() {
           : <GhostList 
               handleClick={()=>setNewListVIsible("")}
               lists={lists} 
+              loading={loading}
             /> 
           }
         </div>
-      </header>
+      
     </div>
   );
 }

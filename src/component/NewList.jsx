@@ -13,7 +13,7 @@ export default function NewList(props) {
                         borderBottom:'grey 1px dashed',
                         borderTopLeftRadius:'10px',
                         borderTopRightRadius:'10px'}}
-            title={<Tooltip trigger='focus' placement="bottomLeft" title="Appuyez sur entrer"><input 
+            title={<Tooltip trigger='focus' placement="bottomLeft" title="Appuyez sur entrer" color="#751905"><input 
                     autoFocus={true}
                     id="inputNewName"
                     className="inputNewName" 
@@ -32,6 +32,7 @@ export default function NewList(props) {
                   tooltip="Annuler" 
                   type="text"
                   size="small" 
+                  colorTool="#751905"
                   icon={<CloseOutlined style={{color:'white'}}/>}
                   handleClick={props.handleClick}
                   >
