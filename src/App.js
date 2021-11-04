@@ -155,13 +155,13 @@ function App() {
     <div className="App">
       {e2Pak==="chevalier"&&(<img  className="knight"src={knightGif} alt="knight" ></img>)}
       {e2Pak==="halloween"&& <Spoopy/>}
-        <header className = "App-header ">
+        <header className = "App-header " >
         <img src={logo}  className = "App-logo" alt = "logo" />
         <p className="welcome" >
           Bienvenue sur GerefouY
         </p>  
         </header>      
-        <div className="d-flex align-items-center flex-wrap justify-content-center ">
+        <div className="d-flex align-items-center flex-wrap justify-content-center " >
        
         {lists.map(list=>(
           <Card 
@@ -263,7 +263,7 @@ function App() {
             /> 
           }
         </div>
-      
+          
     </div>
   );
 }
