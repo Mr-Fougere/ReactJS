@@ -53,7 +53,8 @@ function App() {
         firebase.detach();
    }
  }})},[])
-  function notifManager(updated,oldName,newName,deleted){
+
+  function notifManager(updated,oldName,newName,deleted,error){
     
     if (updated){
       iconNotif=(<EditOutlined style={{ color: '#EAAA03'  }}/>)
@@ -69,14 +70,18 @@ function App() {
       descriptNotif="La liste "+listName+ " a été crée avec succés !"
       reset();
       handleSubmit(updated); 
+    }else if (error){
+      iconNotif=(<ExclamationCircleOutlined style={{ color: '#FF0000'  }}/>)
+      messageNotif="Erreur";
+      descriptNotif="Vérifier les informations de la nouvelle tâche !"
     }else if (listName==="" || listColor === "#F5DEB3"){
       iconNotif=(<ExclamationCircleOutlined style={{ color: '#FF0000'  }}/>)
       messageNotif="Erreur";
       descriptNotif="Vérifier les informations de la nouvelle liste !"   
     }
     openNotification();
-    
   }
+
   function reset(){
       setListName("");
       setListColor("#B11119");
@@ -107,7 +112,7 @@ function App() {
         else if(listName==="halloween"&&listColor==="#EBA12F"){
           setE2Pak("halloween");
           tasks=[{"title":"Faire peur aux enfants","completed":false},
-                {"title":"Se déguiser en contrôleur fiscale","completed":true},
+                {"title":"Se déguiser en contrôleur fiscal","completed":true},
                 {"title":"Invoquer HellBoy","completed":false},
                 {"title":"Faire un pacte avec le diable","completed":true}
                 ]}
@@ -241,6 +246,7 @@ function App() {
               <AddTask
               listPointer={list}
               update={handleUpdate}
+              notifManager={notifManager}
               > 
               </AddTask>}
             </div> 

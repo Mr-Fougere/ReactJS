@@ -128,7 +128,7 @@ p{
 }
 .inputNewName {
   border:transparent;
-  color:white;
+  color:white !important;
   background: transparent;
   border-bottom: grey 1px solid;
   text-align: left;
@@ -138,6 +138,10 @@ p{
   color:white;
   background: transparent;
   text-align: left;
+}
+.inputNewName::placeholder {
+  color: white;
+  font-size: 15px
 }
 .inputNewColor{
   height: 30px;

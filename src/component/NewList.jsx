@@ -18,9 +18,9 @@ export default function NewList(props) {
                     id="inputNewName"
                     className="inputNewName" 
                     type="text"
-                    placeholder="Nouvelle Liste"
+                    placeholder="Nom de la Liste"
                     maxLength="15"
-                    style={{backgroundColor:props.listColor}}
+                    style={{backgroundColor:props.listColora}}
                     onChange={props.handleChangeName}
                     onKeyPress={props.handleKey}
                     > 
